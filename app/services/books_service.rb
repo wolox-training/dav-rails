@@ -6,9 +6,7 @@ class BooksService
     options = { query: { bibkeys: isbn, format: 'json', jscmd: 'data' } }
     book = self.class.get('/api/books', options)
 
-    keys = ['title', 'subtitle', 'number_of_pages', 'authors']
-    JSON.parse(book.body)[isbn].keep_if {|k, v| keys.include?(k)}
-
+    keys = %w[title subtitle number_of_pages authors]
+    JSON.parse(book.body)[isbn].keep_if { |k, _| keys.include?(k) }
   end
-
 end
