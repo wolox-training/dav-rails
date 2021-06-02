@@ -7,7 +7,7 @@ class BooksService
     options = { query: { bibkeys: id, format: 'json', jscmd: 'data' } }
     book = self.class.get(path, options)
 
-    keys = [:title, :subtitle, :number_of_pages, :authors]
+    keys = %i[title subtitle number_of_pages authors]
     JSON.parse(book.body)[id].deep_symbolize_keys.slice(*keys)
   end
 end
