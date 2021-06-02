@@ -1,12 +1,12 @@
 class BooksService
   include HTTParty
-  base_uri 'openlibrary.org'
+  base_uri Rails.application.credentials.base_uri
 
-  def find_book(isbn)
-    options = { query: { bibkeys: isbn, format: 'json', jscmd: 'data' } }
+  def find_book(id)
+    options = { query: { bibkeys: id, format: 'json', jscmd: 'data' } }
     book = self.class.get('/api/books', options)
 
     keys = %w[title subtitle number_of_pages authors]
-    JSON.parse(book.body)[isbn].keep_if { |k, _| keys.include?(k) }
+    JSON.parse(book.body)[id].keep_if { |k, _| keys.include?(k) }
   end
 end

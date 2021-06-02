@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  def book_information
-    render json: BooksService.new.find_book(params[:isbn])
+  def show
+    render json: BooksService.new.find_book(params[:id])
   end
 end
