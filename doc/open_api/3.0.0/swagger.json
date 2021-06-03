@@ -1,0 +1,47 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "TODO: Change me at Fictium.configuration.api",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/books/{isbn}": {
+      "description": "",
+      "get": {
+        "tags": [
+
+        ],
+        "description": "Show details of a book.",
+        "parameters": [
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "isbn",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "with valid isbn {}",
+            "content": {
+              "application/json": {
+                "example": "{\"title\":\"Zen speaks\",\"subtitle\":\"shouts of nothingness\",\"number_of_pages\":159,\"authors\":[{\"url\":\"http://openlibrary.org/authors/OL223368A/Zhizhong_Cai\",\"name\":\"Zhizhong Cai\"}]}"
+              }
+            }
+          },
+          "404": {
+            "description": "with invalid isbn {}",
+            "content": {
+              "application/json": {
+                "example": "{\"message\":\"Book not found\"}"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  }
+}

@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rubocop', '~> 1.15', require: false
   gem 'rubocop-rails', require: false
   gem 'rspec-rails'
+  gem 'fictium'
 end
 
 group :development do
