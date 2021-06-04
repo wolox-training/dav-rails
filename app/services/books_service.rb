@@ -6,6 +6,8 @@ class BooksService
   def find_book(isbn)
     options = { query: { bibkeys: isbn, format: 'json', jscmd: 'data' } }
     book = self.class.get(BOOKS_PATH, options)
+    return book if book.blank?
+
     process_response(book, isbn)
   end
 
