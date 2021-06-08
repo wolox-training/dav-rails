@@ -29,7 +29,7 @@ describe BooksService, type: :service do
           .with(query: { bibkeys: '038547257', format: 'json', jscmd: 'data' })
       end
       it 'returns an empty hash' do
-        expect(service.find_book('038547257')[:response]).to eq(nil)
+        expect(service.find_book('038547257')[:response]).to be_nil
       end
     end
   end
