@@ -42,6 +42,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'fictium'
   gem 'rubocop-rspec', require: false
+  gem 'factory_bot_rails'
+  gem 'database_cleaner-active_record'
+  gem 'faker'
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do
