@@ -5,20 +5,21 @@
     "version": "0.1.0"
   },
   "paths": {
-    "/books/book_information": {
+    "/openlibrary/{isbn}": {
       "description": "",
       "get": {
         "tags": [
 
         ],
-        "description": "Book information a book.",
+        "description": "Show details of an openlibrary.",
         "parameters": [
           {
             "description": "",
             "schema": {
             },
             "name": "isbn",
-            "in": "query"
+            "in": "path",
+            "required": true
           }
         ],
         "responses": {

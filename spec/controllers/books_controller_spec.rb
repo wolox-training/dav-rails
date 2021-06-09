@@ -2,12 +2,12 @@ require 'rails_helper'
 
 shared_context 'common' do |isbn|
   before do
-    get :book_information, params: { isbn: isbn }
+    get :show, params: { isbn: isbn }
   end
 end
 
-describe BooksController, type: :controller do
-  describe action 'GET #book_information' do
+describe OpenlibraryController, type: :controller do
+  describe action 'GET #show' do
     book_info = JSON.parse(
       File.read('./spec/support/fixtures/openlibrary_service_response_success.json'),
       symbolize_names: true
