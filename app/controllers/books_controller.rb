@@ -1,8 +1,6 @@
 class BooksController < ApplicationController
-  include Wor::Paginate
-
   before_action :authenticate_user!
-  
+
   def index
     books = Rack::Reducer.call(params, dataset: Book.all, filters: [
       ->(author:) { where('lower(author) like ?', "%#{author.downcase}%") },
