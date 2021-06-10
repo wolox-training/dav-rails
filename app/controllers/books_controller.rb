@@ -2,7 +2,8 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    render_paginated Book.all, each_serializer: BookSerializer
+    books = Book::Reducer.apply(params)
+    render_paginated books, each_serializer: BookSerializer
   end
 
   def show
