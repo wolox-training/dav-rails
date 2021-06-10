@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    book = Book.find(params[:id])
+    book = Book.friendly.find(params[:id])
     render json: BookSerializer.new.serialize(book).to_json
   end
 end
