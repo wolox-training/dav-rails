@@ -17,6 +17,13 @@
             "description": "",
             "schema": {
             },
+            "name": "warden",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
             "name": "isbn",
             "in": "path",
             "required": true
