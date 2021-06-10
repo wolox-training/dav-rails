@@ -6,7 +6,7 @@ shared_context 'common' do |isbn|
   end
 end
 
-describe BooksController, type: :controller do
+describe OpenlibraryController, type: :controller do
   describe action 'GET #show' do
     book_info = JSON.parse(
       File.read('./spec/support/fixtures/openlibrary_service_response_success.json'),

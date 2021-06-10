@@ -1,8 +1,12 @@
 class BooksController < ApplicationController
-  def show
-    book = BooksService.new.find_book(params[:isbn])
-    return render json: { message: 'Book not found' }, status: :not_found if book.blank?
+  before_action :authenticate_user!
 
-    render json: book
+  def index
+    render_paginated Book.all, each_serializer: BookSerializer
+  end
+
+  def show
+    book = Book.find(params[:id])
+    render json: BookSerializer.new.serialize(book).to_json
   end
 end

@@ -5,13 +5,13 @@
     "version": "0.1.0"
   },
   "paths": {
-    "/books/{isbn}": {
+    "/openlibrary/{isbn}": {
       "description": "",
       "get": {
         "tags": [
 
         ],
-        "description": "Show details of a book.",
+        "description": "Show details of an openlibrary.",
         "parameters": [
           {
             "description": "",
