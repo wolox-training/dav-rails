@@ -9,6 +9,7 @@ require 'rspec/rails'
 # Require the RSpec official implementation:
 require 'fictium/rspec'
 require 'webmock/rspec'
+require 'wor/paginate/rspec'
 # Add some default configurations:
 
 Fictium.configure do |config|
@@ -77,4 +78,5 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end
