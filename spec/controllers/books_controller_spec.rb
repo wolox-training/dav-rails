@@ -3,8 +3,9 @@ require 'rails_helper'
 describe BooksController, type: :controller do
   include_context 'Authenticated User'
 
-  describe 'GET #index' do
-    context 'When fetching all books' do
+  describe action 'GET #index' do
+    describe example 'When fetching all books' do
+      default_example
       let!(:books) { create_list(:book, 3) }
 
       before do
@@ -26,8 +27,9 @@ describe BooksController, type: :controller do
     end
   end
 
-  describe 'GET #show' do
-    context 'When fetching a book using friendlyId' do
+  describe action 'GET #show' do
+    describe example 'When fetching a book using friendlyId' do
+      default_example
       let!(:book) { create(:book) }
 
       before do
