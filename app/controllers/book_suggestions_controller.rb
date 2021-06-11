@@ -1,10 +1,10 @@
 class BookSuggestionsController < ApplicationController
   def create
     book_suggestion = BookSuggestion.create(book_suggestion_params)
-    if book_suggestion.save
+    if book_suggestion.valid?
       render json: book_suggestion, status: :created
     else
-      render json: { Error: 'The book suggestion could not be created.' }, status: :bad_request
+      render json: { error: book_suggestion.errors.messages }, status: :bad_request
     end
   end
 
