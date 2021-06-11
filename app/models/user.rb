@@ -6,4 +6,5 @@ class User < ApplicationRecord
   include DeviseTokenAuth::Concerns::User
 
   has_many :book_suggestions, dependent: :destroy
+  has_many :rents, dependent: :destroy
 end
