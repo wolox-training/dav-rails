@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show]
   resources :openlibrary, only: :show, param: :isbn
   # get 'books/search/:isbn', to: 'openlibrary#show'
+  resources :book_suggestions, only: :create 
 
   root to: 'application#index'
 end
