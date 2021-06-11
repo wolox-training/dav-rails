@@ -5,6 +5,233 @@
     "version": "0.1.0"
   },
   "paths": {
+    "/book_suggestions": {
+      "description": "",
+      "get": {
+        "tags": [
+
+        ],
+        "description": "Create a new book suggestion.",
+        "parameters": [
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "warden",
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "When creating a valid book suggestion {}",
+            "content": {
+              "text/plain": {
+                "example": ""
+              }
+            }
+          },
+          "400": {
+            "description": "When creating an invalid book suggestion {}",
+            "content": {
+              "application/json": {
+                "example": "{\"error\":{\"author\":[\"can't be blank\"]}}"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/books": {
+      "description": "",
+      "get": {
+        "tags": [
+
+        ],
+        "description": "List all available books",
+        "parameters": [
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "warden",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_ACCESS_TOKEN",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_TOKEN_TYPE",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_CLIENT",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_EXPIRY",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_UID",
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "When fetching all books {}",
+            "content": {
+              "application/json": {
+                "example": "{\"page\":[{\"id\":10,\"author\":\"Nathaniel Towne\",\"title\":\"The Millstone\",\"genre\":\"Fantasy\",\"editor\":\"Open University Press\",\"year\":\"1761\",\"image\":\"http://wolox.com.ar/image.jpg\"},{\"id\":11,\"author\":\"Andres Senger\",\"title\":\"Ego Dominus Tuus\",\"genre\":\"Humor\",\"editor\":\"Ace Books\",\"year\":\"1371\",\"image\":\"http://wolox.com.ar/image.jpg\"},{\"id\":12,\"author\":\"Heath Ullrich Jr.\",\"title\":\"Consider the Lilies\",\"genre\":\"Realistic fiction\",\"editor\":\"Edupedia Publications\",\"year\":\"1189\",\"image\":\"http://wolox.com.ar/image.jpg\"}],\"count\":3,\"total_pages\":1,\"total_count\":3,\"current_page\":1,\"previous_page\":null,\"next_page\":null,\"next_page_url\":null,\"previous_page_url\":null}"
+              }
+            },
+            "headers": {
+              "access-token": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "token-type": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "client": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "expiry": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "uid": {
+                "description": "",
+                "schema": {
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/books/{id}": {
+      "description": "",
+      "get": {
+        "tags": [
+
+        ],
+        "description": "Show details of a book.",
+        "parameters": [
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "warden",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_ACCESS_TOKEN",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_TOKEN_TYPE",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_CLIENT",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_EXPIRY",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_UID",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "When fetching a book using friendlyId {}",
+            "content": {
+              "application/json": {
+                "example": "{\"id\":15,\"author\":\"Duane Bruen\",\"title\":\"Look to Windward\",\"genre\":\"Fiction narrative\",\"editor\":\"Library of America\",\"year\":\"1269\",\"image\":\"http://wolox.com.ar/image.jpg\"}"
+              }
+            },
+            "headers": {
+              "access-token": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "token-type": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "client": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "expiry": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "uid": {
+                "description": "",
+                "schema": {
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
     "/openlibrary/{isbn}": {
       "description": "",
       "get": {
