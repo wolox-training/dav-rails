@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show]
   resources :openlibrary, only: :show, param: :isbn
   # get 'books/search/:isbn', to: 'openlibrary#show'
-  resources :book_suggestions, only: :create 
+  resources :book_suggestions, only: :create
+  resources :rents, only: [:index, :create]
+  # get 'users/:user_id/rents', to: 'rents#index'
+  # post 'users/:user_id/rents', to: 'rents#create'
 
   root to: 'application#index'
 end
