@@ -98,7 +98,7 @@
             "description": "When fetching all books {}",
             "content": {
               "application/json": {
-                "example": "{\"page\":[{\"id\":10,\"author\":\"Stanton Zulauf\",\"title\":\"The Mermaids Singing\",\"genre\":\"Western\",\"editor\":\"Hachette Book Group USA\",\"year\":\"1061\",\"image\":\"http://wolox.com.ar/image.jpg\"},{\"id\":11,\"author\":\"Luigi Klocko\",\"title\":\"Fair Stood the Wind for France\",\"genre\":\"Metafiction\",\"editor\":\"Godwit Press\",\"year\":\"1153\",\"image\":\"http://wolox.com.ar/image.jpg\"},{\"id\":12,\"author\":\"Johnathan Quitzon\",\"title\":\"A Time to Kill\",\"genre\":\"Crime/Detective\",\"editor\":\"McGraw Hill Financial\",\"year\":\"1820\",\"image\":\"http://wolox.com.ar/image.jpg\"}],\"count\":3,\"total_pages\":1,\"total_count\":3,\"current_page\":1,\"previous_page\":null,\"next_page\":null,\"next_page_url\":null,\"previous_page_url\":null}"
+                "example": "{\"page\":[{\"id\":10,\"author\":\"Terisa Champlin\",\"title\":\"The Waste Land\",\"genre\":\"Fiction narrative\",\"editor\":\"George H. Doran Company\",\"year\":\"1698\",\"image\":\"http://wolox.com.ar/image.jpg\"},{\"id\":11,\"author\":\"Michelina Terry\",\"title\":\"The Man Within\",\"genre\":\"Speech\",\"editor\":\"McGraw Hill Financial\",\"year\":\"1771\",\"image\":\"http://wolox.com.ar/image.jpg\"},{\"id\":12,\"author\":\"Cyril Trantow Esq.\",\"title\":\"The Golden Bowl\",\"genre\":\"Mythopoeia\",\"editor\":\"Canongate Books\",\"year\":\"1710\",\"image\":\"http://wolox.com.ar/image.jpg\"}],\"count\":3,\"total_pages\":1,\"total_count\":3,\"current_page\":1,\"previous_page\":null,\"next_page\":null,\"next_page_url\":null,\"previous_page_url\":null}"
               }
             },
             "headers": {
@@ -197,7 +197,7 @@
             "description": "When fetching a book using friendlyId {}",
             "content": {
               "application/json": {
-                "example": "{\"id\":15,\"author\":\"Kali King\",\"title\":\"In a Dry Season\",\"genre\":\"Fable\",\"editor\":\"Parragon\",\"year\":\"1454\",\"image\":\"http://wolox.com.ar/image.jpg\"}"
+                "example": "{\"id\":15,\"author\":\"Synthia Wiza\",\"title\":\"The Golden Bowl\",\"genre\":\"Historical fiction\",\"editor\":\"Target Books\",\"year\":\"1346\",\"image\":\"http://wolox.com.ar/image.jpg\"}"
               }
             },
             "headers": {
