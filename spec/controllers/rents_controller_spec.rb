@@ -57,8 +57,8 @@ describe RentsController, type: :controller do
     end
   end
 
-  describe action "GET #book_rankings" do
-    describe example "When fetching all books ordered by times rented" do
+  describe action 'GET #book_rankings' do
+    describe example 'When fetching all books ordered by times rented' do
       default_example
       let!(:books) { create_list(:book, 3) }
 
@@ -67,7 +67,8 @@ describe RentsController, type: :controller do
       end
 
       it 'responses with books ranking json' do
-        expected = Panko::ArraySerializer.new(books, each_serializer: BookRankingSerializer).to_json
+        expected = Panko::ArraySerializer.new(books,
+                                              each_serializer: BookRankingSerializer).to_json
         expect(response.body) =~ JSON.parse(expected)
       end
 
@@ -81,8 +82,8 @@ describe RentsController, type: :controller do
     end
   end
 
-  describe action "Get #active" do
-    describe example "When fetching all active rents" do
+  describe action 'Get #active' do
+    describe example 'When fetching all active rents' do
       default_example
       let!(:rents) { create_list(:rent, 3) }
 
