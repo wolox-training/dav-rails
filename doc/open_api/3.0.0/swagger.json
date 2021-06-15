@@ -98,7 +98,7 @@
             "description": "When fetching all books {}",
             "content": {
               "application/json": {
-                "example": "{\"page\":[{\"id\":10,\"author\":\"Terisa Champlin\",\"title\":\"The Waste Land\",\"genre\":\"Fiction narrative\",\"editor\":\"George H. Doran Company\",\"year\":\"1698\",\"image\":\"http://wolox.com.ar/image.jpg\"},{\"id\":11,\"author\":\"Michelina Terry\",\"title\":\"The Man Within\",\"genre\":\"Speech\",\"editor\":\"McGraw Hill Financial\",\"year\":\"1771\",\"image\":\"http://wolox.com.ar/image.jpg\"},{\"id\":12,\"author\":\"Cyril Trantow Esq.\",\"title\":\"The Golden Bowl\",\"genre\":\"Mythopoeia\",\"editor\":\"Canongate Books\",\"year\":\"1710\",\"image\":\"http://wolox.com.ar/image.jpg\"}],\"count\":3,\"total_pages\":1,\"total_count\":3,\"current_page\":1,\"previous_page\":null,\"next_page\":null,\"next_page_url\":null,\"previous_page_url\":null}"
+                "example": "{\"page\":[{\"id\":10,\"author\":\"Derick Schmidt\",\"title\":\"Blue Remembered Earth\",\"genre\":\"Humor\",\"editor\":\"John Blake Publishing\",\"year\":\"1641\",\"image\":\"http://wolox.com.ar/image.jpg\"},{\"id\":11,\"author\":\"Lanette Mraz\",\"title\":\"O Pioneers!\",\"genre\":\"Essay\",\"editor\":\"Taunton Press\",\"year\":\"1461\",\"image\":\"http://wolox.com.ar/image.jpg\"},{\"id\":12,\"author\":\"Nathanael Pollich\",\"title\":\"I Sing the Body Electric\",\"genre\":\"Realistic fiction\",\"editor\":\"Unfinished Monument Press\",\"year\":\"1859\",\"image\":\"http://wolox.com.ar/image.jpg\"}],\"count\":3,\"total_pages\":1,\"total_count\":3,\"current_page\":1,\"previous_page\":null,\"next_page\":null,\"next_page_url\":null,\"previous_page_url\":null}"
               }
             },
             "headers": {
@@ -197,7 +197,7 @@
             "description": "When fetching a book using friendlyId {}",
             "content": {
               "application/json": {
-                "example": "{\"id\":15,\"author\":\"Synthia Wiza\",\"title\":\"The Golden Bowl\",\"genre\":\"Historical fiction\",\"editor\":\"Target Books\",\"year\":\"1346\",\"image\":\"http://wolox.com.ar/image.jpg\"}"
+                "example": "{\"id\":15,\"author\":\"Zachariah Adams\",\"title\":\"Alone on a Wide, Wide Sea\",\"genre\":\"Realistic fiction\",\"editor\":\"Broadview Press\",\"year\":\"1869\",\"image\":\"http://wolox.com.ar/image.jpg\"}"
               }
             },
             "headers": {
@@ -270,6 +270,260 @@
             "content": {
               "application/json": {
                 "example": "{\"message\":\"Book not found\"}"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/rents": {
+      "description": "",
+      "get": {
+        "tags": [
+
+        ],
+        "description": "Create a new rent.",
+        "parameters": [
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "warden",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_ACCESS_TOKEN",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_TOKEN_TYPE",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_CLIENT",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_EXPIRY",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_UID",
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "When creating a valid rent {}",
+            "content": {
+              "text/plain": {
+                "example": ""
+              }
+            }
+          },
+          "400": {
+            "description": "When creating an invalid rent {}",
+            "content": {
+              "application/json": {
+                "example": "{\"error\":{\"start_date\":[\"can't be blank\"]}}"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/rents/book_rankings": {
+      "description": "",
+      "get": {
+        "tags": [
+
+        ],
+        "description": "Book rankings a rent.",
+        "parameters": [
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "warden",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_ACCESS_TOKEN",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_TOKEN_TYPE",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_CLIENT",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_EXPIRY",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_UID",
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "When fetching all books ordered by times rented {}",
+            "content": {
+              "application/json": {
+                "example": "{\"page\":[{\"id\":46,\"author\":\"Emerson Windler\",\"title\":\"To a God Unknown\",\"image\":\"http://wolox.com.ar/image.jpg\",\"editor\":\"Emerald Group Publishing\",\"year\":\"1902\",\"genre\":\"Suspense/Thriller\",\"times_rented\":10,\"created_at\":\"2021-06-15T17:22:09.538Z\",\"updated_at\":\"2021-06-15T17:22:09.538Z\"},{\"id\":45,\"author\":\"Basil Lakin\",\"title\":\"No Country for Old Men\",\"image\":\"http://wolox.com.ar/image.jpg\",\"editor\":\"Orchard Books\",\"year\":\"1644\",\"genre\":\"Essay\",\"times_rented\":8,\"created_at\":\"2021-06-15T17:22:09.535Z\",\"updated_at\":\"2021-06-15T17:22:09.535Z\"},{\"id\":44,\"author\":\"Otha Purdy\",\"title\":\"Nectar in a Sieve\",\"image\":\"http://wolox.com.ar/image.jpg\",\"editor\":\"Churchill Livingstone\",\"year\":\"1915\",\"genre\":\"Western\",\"times_rented\":7,\"created_at\":\"2021-06-15T17:22:09.532Z\",\"updated_at\":\"2021-06-15T17:22:09.532Z\"}],\"count\":3,\"total_pages\":1,\"total_count\":3,\"current_page\":1,\"previous_page\":null,\"next_page\":null,\"next_page_url\":null,\"previous_page_url\":null}"
+              }
+            },
+            "headers": {
+              "access-token": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "token-type": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "client": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "expiry": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "uid": {
+                "description": "",
+                "schema": {
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/rents/active": {
+      "description": "",
+      "get": {
+        "tags": [
+
+        ],
+        "description": "Active an rent.",
+        "parameters": [
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "warden",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_ACCESS_TOKEN",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_TOKEN_TYPE",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_CLIENT",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_EXPIRY",
+            "in": "header"
+          },
+          {
+            "description": "",
+            "schema": {
+            },
+            "name": "HTTP_UID",
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "When fetching all active rents {}",
+            "content": {
+              "application/json": {
+                "example": "{\"page\":[{\"id\":27,\"start_date\":\"2021-06-14\",\"end_date\":\"2021-07-03\",\"book\":{\"id\":59,\"author\":\"Brice Bergnaum\",\"title\":\"Behold the Man\",\"genre\":\"Horror\",\"editor\":\"Heyday Books\",\"year\":\"1475\",\"image\":\"http://wolox.com.ar/image.jpg\"},\"user\":{\"id\":59,\"first_name\":\"Fabian\",\"last_name\":\"Hilpert\",\"email\":\"freddie@yost-rath.com\"}},{\"id\":28,\"start_date\":\"2021-06-14\",\"end_date\":\"2021-06-30\",\"book\":{\"id\":60,\"author\":\"Ignacia McLaughlin JD\",\"title\":\"The Heart Is a Lonely Hunter\",\"genre\":\"Fiction in verse\",\"editor\":\"Secker \\u0026 Warburg\",\"year\":\"1767\",\"image\":\"http://wolox.com.ar/image.jpg\"},\"user\":{\"id\":60,\"first_name\":\"Jeni\",\"last_name\":\"Powlowski\",\"email\":\"ervin@leannon.name\"}},{\"id\":29,\"start_date\":\"2021-06-14\",\"end_date\":\"2021-06-18\",\"book\":{\"id\":61,\"author\":\"Prof. Lydia Hermiston\",\"title\":\"In a Dry Season\",\"genre\":\"Fantasy\",\"editor\":\"HMSO\",\"year\":\"1134\",\"image\":\"http://wolox.com.ar/image.jpg\"},\"user\":{\"id\":61,\"first_name\":\"Lawerence\",\"last_name\":\"Kohler\",\"email\":\"darleen@lueilwitz-turner.info\"}}],\"count\":3,\"total_pages\":1,\"total_count\":3,\"current_page\":1,\"previous_page\":null,\"next_page\":null,\"next_page_url\":null,\"previous_page_url\":null}"
+              }
+            },
+            "headers": {
+              "access-token": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "token-type": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "client": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "expiry": {
+                "description": "",
+                "schema": {
+                }
+              },
+              "uid": {
+                "description": "",
+                "schema": {
+                }
               }
             }
           }

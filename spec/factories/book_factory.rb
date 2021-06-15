@@ -8,5 +8,6 @@ FactoryBot.define do
     title { Faker::Book.title }
     editor { Faker::Book.publisher }
     year { Faker::Number.between(from: 1000, to: 2019) }
+    times_rented { Faker::Number.between(from: 1, to: 20) }
   end
 end
