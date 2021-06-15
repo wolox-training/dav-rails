@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :rents do
     collection do
       get :book_rankings
+      get :active
     end
   end
 

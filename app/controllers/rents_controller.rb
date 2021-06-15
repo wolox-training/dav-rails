@@ -22,6 +22,12 @@ class RentsController < ApplicationController
     render_paginated books, each_serializer: BookRankingSerializer
   end
 
+  def active
+    today = DateTime.current.to_date
+    rents = Rent.where("start_date < '#{today}' AND end_date > '#{today}' AND returned = false")
+    render_paginated rents, each_serializer: RentSerializer
+  end
+
   private
 
   def rent_params
