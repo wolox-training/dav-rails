@@ -2,12 +2,13 @@ class RentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    render_paginated current_user.rents, each_serializer: RentSerializer
+    render_paginated policy_scope(Rent), each_serializer: RentSerializer
   end
 
   def create
-    rent = Rent.create(rent_params)
-    if rent.valid?
+    rent = Rent.new(rent_params)
+    authorize rent
+    if rent.save
       render json: RentSerializer.new.serialize(rent).to_json, status: :created
     else
       render json: { error: rent.errors.messages }, status: :bad_request
