@@ -7,7 +7,7 @@ describe RentsController, type: :controller do
     describe example 'When fetching all rents' do
       default_example
       let!(:rents) { create_list(:rent, 3) }
-
+      
       before do
         get :index
       end
@@ -31,7 +31,7 @@ describe RentsController, type: :controller do
     subject(:post_rent) { post :create, params: { rent: rent } }
     describe example 'When creating a valid rent' do
       default_example
-      let!(:rent) { attributes_for(:rent) }
+      let!(:rent) { attributes_for(:rent, user_id: user.id) }
       it 'creates a new rent' do
         expect { post_rent }.to change { Rent.count }.by(1)
       end
@@ -40,7 +40,7 @@ describe RentsController, type: :controller do
     end
 
     describe example 'When creating an invalid rent' do
-      let!(:rent) { attributes_for(:rent, start_date: nil) }
+      let!(:rent) { attributes_for(:rent, user_id: user.id, start_date: nil) }
       before do
         post_rent
       end
