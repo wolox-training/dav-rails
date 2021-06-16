@@ -6,13 +6,13 @@ class Rent < ApplicationRecord
   after_create :increase_times_rented
 
   scope :are_active, lambda { |today|
-                       where("start_date < '#{today}' AND end_date > '#{today}' AND returned = false")
+                       where('start_date < :today AND end_date > :today AND returned = false',
+                             today: today)
                      }
 
   private
 
   def increase_times_rented
-    book = Book.find(book_id)
     book.times_rented += 1
     book.save
   end
