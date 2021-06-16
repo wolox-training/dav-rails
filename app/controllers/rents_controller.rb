@@ -14,6 +14,16 @@ class RentsController < ApplicationController
     end
   end
 
+  def book_rankings
+    books = Book.all.order(times_rented: :desc)
+    render_paginated books, each_serializer: BookRankingSerializer
+  end
+
+  def active
+    rents = Rent.are_active(DateTime.current.to_date)
+    render_paginated rents, each_serializer: RentSerializer
+  end
+
   private
 
   def rent_params

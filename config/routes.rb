@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   resources :users, only: :show do
     resources :rents, only: [:index, :create]
   end
+  resources :rents do
+    collection do
+      get :book_rankings
+      get :active
+    end
+  end
 
   root to: 'application#index'
 end
