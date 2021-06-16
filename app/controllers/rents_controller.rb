@@ -9,6 +9,7 @@ class RentsController < ApplicationController
     rent = Rent.new(rent_params)
     authorize rent
     if rent.save
+      RentMailer.new_rent(rent.id).deliver_later
       render json: RentSerializer.new.serialize(rent).to_json, status: :created
     else
       render json: { error: rent.errors.messages }, status: :bad_request
