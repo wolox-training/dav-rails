@@ -7,7 +7,7 @@ describe RentsController, type: :controller do
     describe example 'When fetching all rents' do
       default_example
       let!(:rents) { create_list(:rent, 3) }
-      
+
       before do
         get :index
       end
