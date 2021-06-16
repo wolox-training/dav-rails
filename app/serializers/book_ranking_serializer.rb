@@ -1,4 +1,3 @@
-class BookRankingSerializer < Panko::Serializer
-  attributes :id, :author, :title, :image, :editor, :year,
-             :genre, :times_rented, :created_at, :updated_at
+class BookRankingSerializer < BookSerializer
+  attributes :times_rented, :created_at, :updated_at
 end

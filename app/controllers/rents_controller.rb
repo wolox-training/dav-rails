@@ -9,9 +9,6 @@ class RentsController < ApplicationController
     rent = Rent.create(rent_params)
     if rent.valid?
       render json: RentSerializer.new.serialize(rent).to_json, status: :created
-      book = Book.find(rent.book_id)
-      book.times_rented += 1
-      book.save
     else
       render json: { error: rent.errors.messages }, status: :bad_request
     end
@@ -23,8 +20,7 @@ class RentsController < ApplicationController
   end
 
   def active
-    today = DateTime.current.to_date
-    rents = Rent.where("start_date < '#{today}' AND end_date > '#{today}' AND returned = false")
+    rents = Rent.are_active(DateTime.current.to_date)
     render_paginated rents, each_serializer: RentSerializer
   end
 

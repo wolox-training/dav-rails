@@ -100,10 +100,6 @@ describe RentsController, type: :controller do
         expect(JSON.parse(response.body)).to be_paginated
       end
 
-      it 'returns 3 rents' do
-        expect(JSON.parse(response.body)['count']).to be(3)
-      end
-
       it 'responds with 200 status' do
         expect(response).to have_http_status(:ok)
       end
