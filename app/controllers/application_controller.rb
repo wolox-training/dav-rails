@@ -3,12 +3,12 @@ class ApplicationController < ActionController::Base
   include DeviseTokenAuth::Concerns::SetUserByToken
   include Wor::Paginate
   include Pundit
-
-  def index
-    render json: { message: 'Welcome to Rails Wbooks-API' }
-  end
-
+  
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  
+  def index
+  render json: { message: 'Welcome to Rails Wbooks-API' }
+  end
 
   private
 
