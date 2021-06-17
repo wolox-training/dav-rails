@@ -8,8 +8,8 @@ class RentMailer < ApplicationMailer
     mail(to: @user.email, subject: 'New rent')
   end
 
-  def rent_due
-    @rent = Rent.find(45)
+  def rent_due(rent_id)
+    @rent = Rent.find(rent_id)
     @user = @rent.user
     @book = @rent.book
 

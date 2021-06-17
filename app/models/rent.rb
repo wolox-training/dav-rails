@@ -10,6 +10,7 @@ class Rent < ApplicationRecord
                              today: today)
                      }
 
+  scope :are_due, ->(today) { where('end_date = :today', today: today) }
   private
 
   def increase_times_rented

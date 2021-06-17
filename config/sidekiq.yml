@@ -4,6 +4,6 @@ development:
     - default
     - mailers
   :schedule:
-    rent_due:
-      cron: '0 * * * * *'   # Runs once per minute
-      class: RentDue
+    rent_scheduler:
+      cron: '0 9 * * *'
+      class: RentScheduler
