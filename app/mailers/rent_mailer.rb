@@ -15,5 +15,4 @@ class RentMailer < ApplicationMailer
 
     mail(to: @user.email, subject: 'Rent due')
   end
-
 end
