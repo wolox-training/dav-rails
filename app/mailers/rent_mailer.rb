@@ -7,4 +7,13 @@ class RentMailer < ActionMailer::Base
 
     mail(to: @user.email, subject: 'New rent')
   end
+
+  def rent_due
+    @rent = Rent.find(45)
+    @user = @rent.user
+    @book = @rent.book
+
+    mail(to: @user.email, subject: 'Rent due')
+  end
+
 end
