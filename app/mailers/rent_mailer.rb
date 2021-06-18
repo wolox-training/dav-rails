@@ -5,7 +5,9 @@ class RentMailer < ApplicationMailer
     @user = @rent.user
     @book = @rent.book
 
-    mail(to: @user.email, subject: 'New rent')
+    I18n.with_locale(@user.locale) do
+      mail(to: @user.email, subject: I18n.t(:new_rent))
+    end
   end
 
   def rent_due(rent_id)
@@ -13,6 +15,8 @@ class RentMailer < ApplicationMailer
     @user = @rent.user
     @book = @rent.book
 
-    mail(to: @user.email, subject: 'Rent due')
+    I18n.with_locale(@user.locale) do
+      mail(to: @user.email, subject: I18n.t(:rent_due))
+    end
   end
 end
