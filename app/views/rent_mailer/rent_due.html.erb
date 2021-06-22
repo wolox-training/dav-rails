@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>Hi!, <%= @user.first_name %></h2>
+    <h2>
+      The book rent has expired: 
+    </h2>
+    <h3>
+      <%= "Title: #{@book.title}, genre: #{@book.genre}, Author: #{@book.author}, Year: #{@book.year}" %>
+    </h3>
+    <h3>  Please return it today! :D </h3>
+  </body>
+</html>

@@ -3,3 +3,7 @@ development:
   :queues:
     - default
     - mailers
+  :schedule:
+    rent_scheduler:
+      cron: '0 9 * * *'
+      class: RentScheduler
