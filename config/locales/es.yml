@@ -1,0 +1,13 @@
+es:
+  new_rent: "Nuevo alquiler de libro"
+  hello: "Hola!"
+  description1: "Has alquilado el libro:"
+  title: "Tutulo"
+  genre: "Genero"
+  author: "Autor"
+  year: "Año"
+  rented_at: "Alquilado el"
+  rent_ends: "El alquiler termina el"
+  rent_due: "Alquiler de libro vencido"
+  description2: "El alquiler del libro ha expirado:"
+  please: "Por favor regresalo hoy! :D"

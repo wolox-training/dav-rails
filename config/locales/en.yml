@@ -30,4 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  new_rent: "New book rent"
+  hello: "Hi!"
+  description1: "You had rented the book:"
+  title: "Title"
+  genre: "Genre"
+  author: "Author"
+  year: "Year"
+  rented_at: "Rented at"
+  rent_ends: "Rent ends at"
+  rent_due: "Past due book rental"
+  description2: "The book rent has expired:"
+  please: "Please return it today! :D"
